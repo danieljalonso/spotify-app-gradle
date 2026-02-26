@@ -6,5 +6,6 @@ public interface AlbumRepository {
 
     public ArrayList<Album> getAlbums();
     public void saveAlbum(Album album);
+    public void deleteAlbum(String albumId);
 
 }
