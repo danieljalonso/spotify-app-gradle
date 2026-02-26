@@ -3,6 +3,7 @@ package edu.iesam.features.songs.presentation;
 import edu.iesam.features.songs.data.SongDataRepository;
 import edu.iesam.features.songs.data.SongMemLocalDataSource;
 import edu.iesam.features.songs.domain.GetSongsUseCase;
+import edu.iesam.features.songs.domain.SaveSongsUseCase;
 import edu.iesam.features.songs.domain.Song;
 
 import java.util.ArrayList;
@@ -22,8 +23,7 @@ public class SongView {
         Song newSong = new Song("2", "name2", "random", "3:00");
 
         SaveSongsUseCase saveSongsUseCase = new SaveSongsUseCase(
-                new SongDataRepository(
-                        new SongMemLocalDataSource()));
+                new SongDataRepository(SongMemLocalDataSource.newInstance()));
 
         saveSongsUseCase.execute(newSong);
     }
