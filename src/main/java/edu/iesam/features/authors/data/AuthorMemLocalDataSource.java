@@ -30,6 +30,10 @@ public class AuthorMemLocalDataSource {
         authorsMemStorage.add(author);
     }
 
+    public void delete(String authorId) {
+        authorsMemStorage.removeIf(author -> author.getId().equals(authorId));
+    }
+
     public static AuthorMemLocalDataSource newInstance(){
         if (instance == null){
             instance = new AuthorMemLocalDataSource();
